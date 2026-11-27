@@ -18,33 +18,33 @@ jobs:
           fetch-depth: 0
 
       - name: Verify tail 00
-        run: echo "8b2e179743ae7ded2476b2a3f0c009f75ec4d2fd6b9c4f9cbb64adfa88a8491a  .bootstrap/tail_00" | sha256sum -c -
+        run: echo "95a5911414d07c9454e4ee01266d823bb5e32404bfd35f4f251f5b8ce6615629  .bootstrap/tail_00" | sha256sum -c -
       - name: Verify tail 01
-        run: echo "1818974d7d112c94950a848dc56f003004c11427697b09019317484dd5f84676  .bootstrap/tail_01" | sha256sum -c -
+        run: echo "601ea7bd72a47c943e035140b23e5a8d2a2eb85c8d28d7ab4ab5951f44791dde  .bootstrap/tail_01" | sha256sum -c -
       - name: Verify tail 02
-        run: echo "c0909a24a160863bdb97cfbb4defc38cc82bac9cc16d45d045546965abbb1298  .bootstrap/tail_02" | sha256sum -c -
+        run: echo "3cd42f9d81ef7e60af325d71ba48fd36ef25b6ae8cd9489a1482d5042f465806  .bootstrap/tail_02" | sha256sum -c -
       - name: Verify tail 03
-        run: echo "fca4aa535ba18cd4642c02403e07598e8c4420af405d443bc3707b0786212267  .bootstrap/tail_03" | sha256sum -c -
+        run: echo "c1a098875221670732e7e4ed6c51f202842bca35d765016b0574720c2b41c2e0  .bootstrap/tail_03" | sha256sum -c -
       - name: Verify tail 04
-        run: echo "31901aba456e44299b6f4a8c3dff10f2fd8a7acfd8cd6e37dd34a7dc49cb32e0  .bootstrap/tail_04" | sha256sum -c -
+        run: echo "f2e03d1eff68464578a3b149f06be907a41275f7477249701ca70cbedfc1cd10  .bootstrap/tail_04" | sha256sum -c -
       - name: Verify tail 05
-        run: echo "604a4c82ec464e5476de319a0eeead52648259f3a23df589e5fc324c705d3235  .bootstrap/tail_05" | sha256sum -c -
+        run: echo "d875f74fc90187bb85925ce1edb75066b76daaa82229409c557d9a83e01e40b4  .bootstrap/tail_05" | sha256sum -c -
       - name: Verify tail 06
-        run: echo "6022bbcf3da680eaaf8433f354318a8f594d7d6475fb155f21aefbb236b1ec3f  .bootstrap/tail_06" | sha256sum -c -
+        run: echo "7670b2bc1e036573d7b679e70d84adb5e1ceaa3d4a7903573d916947791ab06b  .bootstrap/tail_06" | sha256sum -c -
       - name: Verify tail 07
-        run: echo "d8a9feb898a3cc430198e7eefc9c94985036c3b709e3668264e02fcb12725786  .bootstrap/tail_07" | sha256sum -c -
+        run: echo "cabeb15f9a11a84898dbeb4021d4b2a337aeec7f10f50a227ba70a3bb5903fee  .bootstrap/tail_07" | sha256sum -c -
       - name: Verify tail 08
-        run: echo "6161d70f08b79dbcdd0ff01ab2d6625300d04c2432aad5387021ea12f0602182  .bootstrap/tail_08" | sha256sum -c -
+        run: echo "5b59d1b8ccdd19df88b9df6655b4d352189226729ce562094aec40564f6408e3  .bootstrap/tail_08" | sha256sum -c -
       - name: Verify tail 09
-        run: echo "eaf250eaaf164c1f3fcbd8f94e4d884886510637d44c0302ac1344765a83391a  .bootstrap/tail_09" | sha256sum -c -
+        run: echo "9cffab9b1e32235b564c4f961aaef4c53015a077a11782814fbdc5de0a2a94ca  .bootstrap/tail_09" | sha256sum -c -
       - name: Verify tail 10
-        run: echo "bf71b02b87efae9b60fdc3288a0191bd43df59c0457d3caaf8265b6de047eaef  .bootstrap/tail_10" | sha256sum -c -
+        run: echo "9a92ab774db575c231d9fdebb6f19a1453964f2f080117bd9d63c50b9f4932bf  .bootstrap/tail_10" | sha256sum -c -
       - name: Verify tail 11
-        run: echo "a1085ca7b1a8058bad8bd3c8bf53e6a387f79c791736da99e41596a6a5265a15  .bootstrap/tail_11" | sha256sum -c -
+        run: echo "f6a68dc2465ca40cb57a0a2708813be2c05ad2a6a1bb7deabf2860a438df3ef5  .bootstrap/tail_11" | sha256sum -c -
       - name: Verify tail 12
-        run: echo "f2a3bd88678cdf6e3f4923a27e3a802a60473f1bedb8ac30d87b340ac6b4ee33  .bootstrap/tail_12" | sha256sum -c -
+        run: echo "cc0773f782a9cb6ea74241e9c5ab62875684223b5d55ceb8e757999afe05ed60  .bootstrap/tail_12" | sha256sum -c -
       - name: Verify tail 13
-        run: echo "201483fbb6cdf5d01ca65ad1c0c41ecbe32ab5a66f05250f39359598222515d3  .bootstrap/tail_13" | sha256sum -c -
+        run: echo "4c6bdc3807410f2091aa6889495d0d9b0b49a9808cfe53cf592ebe229bce294a  .bootstrap/tail_13" | sha256sum -c -
 
       - name: Rebuild and verify archive
         shell: bash
