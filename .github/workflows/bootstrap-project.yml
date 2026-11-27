@@ -17,44 +17,45 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Verify chunk 00
-        run: echo "1dbb7ff32b42c571b5335aab6c97e01b749b86af4ed2371a9ec08b08115c1447  .bootstrap/chunk_00" | sha256sum -c -
-      - name: Verify chunk 01
-        run: echo "13f2776b9266f828edf23ed9b4552733857e91ec0a9b8407b46556678af6fa9e  .bootstrap/chunk_01" | sha256sum -c -
-      - name: Verify chunk 02
-        run: echo "862e4ce011f546e5b72f7b6b1fa2e09548c106e68ebaac7d52c5c37e35ca3ba6  .bootstrap/chunk_02" | sha256sum -c -
-      - name: Verify chunk 03
-        run: echo "fcbe2889e0907af1b47720b0b8045ed81169e5a2d4831dc5acd533a81e0260bf  .bootstrap/chunk_03" | sha256sum -c -
-      - name: Verify chunk 04
-        run: echo "9ae934097622683bb232c22a2f1946ea9141fd75b4221560c87d6b6c4a5892ea  .bootstrap/chunk_04" | sha256sum -c -
-      - name: Verify chunk 05
-        run: echo "2099320e4443741aa9ceb0050b63bc0d59abbec68496b86ff45af141ca17a061  .bootstrap/chunk_05" | sha256sum -c -
-      - name: Verify chunk 06
-        run: echo "904b44a10d26b4fef9e6556cdbc2233ff0757d9f7b65704212900ced628d5081  .bootstrap/chunk_06" | sha256sum -c -
-      - name: Verify chunk 07
-        run: echo "e86064e9dd6f0173b68cc12b9f78b31e2a0abdd7051807b4ac46c83536334450  .bootstrap/chunk_07" | sha256sum -c -
-      - name: Verify chunk 08
-        run: echo "4bac6c0ea102fe450e42c8d038ec4712b2a2ceb43808785db2fa6180ec5afe41  .bootstrap/chunk_08" | sha256sum -c -
-      - name: Verify chunk 09
-        run: echo "01b04ce8dff2c47de0dfed0a7ce7aed0005b6dee893b121b5067ae92b9b8236b  .bootstrap/chunk_09" | sha256sum -c -
-      - name: Verify chunk 10
-        run: echo "51b1df29b507f9ee0458462e5c820e0b628e5643ad28fa5cdd60f215ea2460fa  .bootstrap/chunk_10" | sha256sum -c -
-      - name: Verify chunk 11
-        run: echo "0c36e90eb9e05e7053c7b168f891d331f8c6687a647889a44adc4d0118702a35  .bootstrap/chunk_11" | sha256sum -c -
-      - name: Verify chunk 12
-        run: echo "db3f28907c86d1953d435ab5001c43b0a6439224bf91016d31c76f9d0efa1638  .bootstrap/chunk_12" | sha256sum -c -
-      - name: Verify chunk 13
-        run: echo "a5a2b6841b5c0c17d86de96db68fb61128592ecd0e04f044daa1e87efcd23ea6  .bootstrap/chunk_13" | sha256sum -c -
-      - name: Verify chunk 14
-        run: echo "1b28a334081c744406ff6dbe8bf3c9d0d2b2bcc5ab5c91d3c03be2f071c49412  .bootstrap/chunk_14" | sha256sum -c -
-      - name: Verify chunk 15
-        run: echo "3ed97120985c7522057ade9bb6302dd4137a4f56b7ed806e824065004394aee2  .bootstrap/chunk_15" | sha256sum -c -
+      - name: Verify tail 00
+        run: echo "8b2e179743ae7ded2476b2a3f0c009f75ec4d2fd6b9c4f9cbb64adfa88a8491a  .bootstrap/tail_00" | sha256sum -c -
+      - name: Verify tail 01
+        run: echo "1818974d7d112c94950a848dc56f003004c11427697b09019317484dd5f84676  .bootstrap/tail_01" | sha256sum -c -
+      - name: Verify tail 02
+        run: echo "c0909a24a160863bdb97cfbb4defc38cc82bac9cc16d45d045546965abbb1298  .bootstrap/tail_02" | sha256sum -c -
+      - name: Verify tail 03
+        run: echo "fca4aa535ba18cd4642c02403e07598e8c4420af405d443bc3707b0786212267  .bootstrap/tail_03" | sha256sum -c -
+      - name: Verify tail 04
+        run: echo "31901aba456e44299b6f4a8c3dff10f2fd8a7acfd8cd6e37dd34a7dc49cb32e0  .bootstrap/tail_04" | sha256sum -c -
+      - name: Verify tail 05
+        run: echo "604a4c82ec464e5476de319a0eeead52648259f3a23df589e5fc324c705d3235  .bootstrap/tail_05" | sha256sum -c -
+      - name: Verify tail 06
+        run: echo "6022bbcf3da680eaaf8433f354318a8f594d7d6475fb155f21aefbb236b1ec3f  .bootstrap/tail_06" | sha256sum -c -
+      - name: Verify tail 07
+        run: echo "d8a9feb898a3cc430198e7eefc9c94985036c3b709e3668264e02fcb12725786  .bootstrap/tail_07" | sha256sum -c -
+      - name: Verify tail 08
+        run: echo "6161d70f08b79dbcdd0ff01ab2d6625300d04c2432aad5387021ea12f0602182  .bootstrap/tail_08" | sha256sum -c -
+      - name: Verify tail 09
+        run: echo "eaf250eaaf164c1f3fcbd8f94e4d884886510637d44c0302ac1344765a83391a  .bootstrap/tail_09" | sha256sum -c -
+      - name: Verify tail 10
+        run: echo "bf71b02b87efae9b60fdc3288a0191bd43df59c0457d3caaf8265b6de047eaef  .bootstrap/tail_10" | sha256sum -c -
+      - name: Verify tail 11
+        run: echo "a1085ca7b1a8058bad8bd3c8bf53e6a387f79c791736da99e41596a6a5265a15  .bootstrap/tail_11" | sha256sum -c -
+      - name: Verify tail 12
+        run: echo "f2a3bd88678cdf6e3f4923a27e3a802a60473f1bedb8ac30d87b340ac6b4ee33  .bootstrap/tail_12" | sha256sum -c -
+      - name: Verify tail 13
+        run: echo "201483fbb6cdf5d01ca65ad1c0c41ecbe32ab5a66f05250f39359598222515d3  .bootstrap/tail_13" | sha256sum -c -
 
-      - name: Rebuild archive
+      - name: Rebuild and verify archive
         shell: bash
         run: |
           set -euo pipefail
-          cat .bootstrap/chunk_* | base64 --decode > /tmp/project.zip
+          {
+            for index in $(seq -w 0 12); do
+              cat ".bootstrap/chunk_${index}"
+            done
+            cat .bootstrap/tail_*
+          } | base64 --decode > /tmp/project.zip
           test "$(stat -c '%s' /tmp/project.zip)" = "102459"
           echo "a65bad5be291f95b18cce89b7720c1a340c315856c9e77db9f137162a92cf44f  /tmp/project.zip" | sha256sum -c -
           unzip -t /tmp/project.zip
