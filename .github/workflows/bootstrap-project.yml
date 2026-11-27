@@ -44,7 +44,11 @@ jobs:
       - name: Verify chunk 12
         run: echo "db3f28907c86d1953d435ab5001c43b0a6439224bf91016d31c76f9d0efa1638  .bootstrap/chunk_12" | sha256sum -c -
       - name: Verify chunk 13
-        run: echo "bf2779fe03919ecde896476eaf934f63646252e5623ab5712e80ac49a40a3174  .bootstrap/chunk_13" | sha256sum -c -
+        run: echo "a5a2b6841b5c0c17d86de96db68fb61128592ecd0e04f044daa1e87efcd23ea6  .bootstrap/chunk_13" | sha256sum -c -
+      - name: Verify chunk 14
+        run: echo "1b28a334081c744406ff6dbe8bf3c9d0d2b2bcc5ab5c91d3c03be2f071c49412  .bootstrap/chunk_14" | sha256sum -c -
+      - name: Verify chunk 15
+        run: echo "3ed97120985c7522057ade9bb6302dd4137a4f56b7ed806e824065004394aee2  .bootstrap/chunk_15" | sha256sum -c -
 
       - name: Rebuild archive
         shell: bash
