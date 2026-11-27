@@ -1,0 +1,81 @@
+name: Expand verified project archive
+
+on:
+  push:
+    branches:
+      - feat/initial-techdebt-scanner-platform
+
+permissions:
+  contents: write
+
+jobs:
+  expand:
+    if: ${{ github.actor != 'github-actions[bot]' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify tail 00
+        run: echo "95a5911414d07c9454e4ee01266d823bb5e32404bfd35f4f251f5b8ce6615629  .bootstrap/tail_00" | sha256sum -c -
+      - name: Verify tail 01
+        run: echo "601ea7bd72a47c943e035140b23e5a8d2a2eb85c8d28d7ab4ab5951f44791dde  .bootstrap/tail_01" | sha256sum -c -
+      - name: Verify tail 02
+        run: echo "3cd42f9d81ef7e60af325d71ba48fd36ef25b6ae8cd9489a1482d5042f465806  .bootstrap/tail_02" | sha256sum -c -
+      - name: Verify tail 03
+        run: echo "c1a098875221670732e7e4ed6c51f202842bca35d765016b0574720c2b41c2e0  .bootstrap/tail_03" | sha256sum -c -
+      - name: Verify tail 04
+        run: echo "f2e03d1eff68464578a3b149f06be907a41275f7477249701ca70cbedfc1cd10  .bootstrap/tail_04" | sha256sum -c -
+      - name: Verify tail 05
+        run: echo "d875f74fc90187bb85925ce1edb75066b76daaa82229409c557d9a83e01e40b4  .bootstrap/tail_05" | sha256sum -c -
+      - name: Verify tail 06
+        run: echo "7670b2bc1e036573d7b679e70d84adb5e1ceaa3d4a7903573d916947791ab06b  .bootstrap/tail_06" | sha256sum -c -
+      - name: Verify tail 07
+        run: echo "cabeb15f9a11a84898dbeb4021d4b2a337aeec7f10f50a227ba70a3bb5903fee  .bootstrap/tail_07" | sha256sum -c -
+      - name: Verify tail 08
+        run: echo "5b59d1b8ccdd19df88b9df6655b4d352189226729ce562094aec40564f6408e3  .bootstrap/tail_08" | sha256sum -c -
+      - name: Verify tail 09
+        run: echo "9cffab9b1e32235b564c4f961aaef4c53015a077a11782814fbdc5de0a2a94ca  .bootstrap/tail_09" | sha256sum -c -
+      - name: Verify tail 10
+        run: echo "9a92ab774db575c231d9fdebb6f19a1453964f2f080117bd9d63c50b9f4932bf  .bootstrap/tail_10" | sha256sum -c -
+      - name: Verify tail 11
+        run: echo "f6a68dc2465ca40cb57a0a2708813be2c05ad2a6a1bb7deabf2860a438df3ef5  .bootstrap/tail_11" | sha256sum -c -
+      - name: Verify tail 12
+        run: echo "cc0773f782a9cb6ea74241e9c5ab62875684223b5d55ceb8e757999afe05ed60  .bootstrap/tail_12" | sha256sum -c -
+      - name: Verify tail 13
+        run: echo "4c6bdc3807410f2091aa6889495d0d9b0b49a9808cfe53cf592ebe229bce294a  .bootstrap/tail_13" | sha256sum -c -
+
+      - name: Rebuild and verify archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          {
+            for index in $(seq -w 0 12); do
+              cat ".bootstrap/chunk_${index}"
+            done
+            cat .bootstrap/tail_*
+          } | base64 --decode > /tmp/project.zip
+          test "$(stat -c '%s' /tmp/project.zip)" = "102459"
+          echo "a65bad5be291f95b18cce89b7720c1a340c315856c9e77db9f137162a92cf44f  /tmp/project.zip" | sha256sum -c -
+          unzip -t /tmp/project.zip
+
+      - name: Expand project
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/project
+          mkdir -p /tmp/project
+          unzip -q /tmp/project.zip -d /tmp/project
+          cp -a /tmp/project/techdebt-scanner-platform/. .
+          rm -rf .bootstrap .github/workflows/bootstrap-project.yml
+
+      - name: Commit expanded project
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "feat: add TechDebt Scanner platform MVP"
+          git push origin HEAD
