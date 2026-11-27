@@ -1,0 +1,40 @@
+name: Expand verified project archive
+
+on:
+  push:
+    branches:
+      - feat/initial-techdebt-scanner-platform
+
+permissions:
+  contents: write
+
+jobs:
+  expand:
+    if: ${{ github.actor != 'github-actions[bot]' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Rebuild and verify archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .bootstrap/chunk_* | base64 --decode > /tmp/project.zip
+          echo "a65bad5be291f95b18cce89b7720c1a340c315856c9e77db9f137162a92cf44f  /tmp/project.zip" | sha256sum -c -
+          rm -rf /tmp/project
+          mkdir -p /tmp/project
+          unzip -q /tmp/project.zip -d /tmp/project
+          cp -a /tmp/project/techdebt-scanner-platform/. .
+          rm -rf .bootstrap .github/workflows/bootstrap-project.yml
+
+      - name: Commit expanded project
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "feat: add TechDebt Scanner platform MVP"
+          git push origin HEAD
